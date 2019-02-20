@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SelectionSort
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] list = { 5, 2, 1, 3, 6, 4 };
+            int[] sortedList = new int[list.Length];
+
+            for(int i = 0; i < list.Length; i++)
+            {
+
+                int comparisonNumber = list[i];
+                int position = i;
+
+                for (int j = i; j < list.Length; j++)
+                {                    
+                    if (list[j] < comparisonNumber)
+                    {
+                        comparisonNumber = list[j]; // putting lowest number to a swapping variable.
+                        position = j;                       
+                    }                   
+                }
+
+                list[position] = list[i];// changing lowest number value with first number compared.
+                list[i] = comparisonNumber;// changing compared number value to that of lowest number.
+
+                Console.WriteLine(list[i]);
+
+            }
+        }
+    }
+}
