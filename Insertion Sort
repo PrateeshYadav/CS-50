@@ -1,69 +1,42 @@
-#include<stdio.h>
-#include<cs50.h>
-
-int main (void)
+int main(void)
 {
 
-    int array[] = {5,2,1,3,6,4};
-    int aSize = 6;
 
-    int sorted = 0;
+    int list[] = { 5, 2, 1, 3, 6, 4 };
+    int arraySize = 6;
 
-    while (sorted != aSize)
+    int sortedList = 0;
+
+    for (int i = 0; i < arraySize; i++)
     {
-        for(int i = 0; i < aSize; i++)// i wil be the value compared to "sorted" array.
+        int comp = list[i];
+        int arrayPos = i;
+
+        for (int j = sortedList; j >= 0; j--)
         {
-
             int temp = 0;
-
-            for(int j = 0; j < sorted; j++)// j will be the "sorted" array that we compare i to.
+            
+            if (comp < list[j])
             {
-                if(array[i] < array[j])
-                {
-                    temp = array[i];
-
-                    for(int k = sorted; k > j; k--)
-                    {
-                        array[k] = array[k-1];
-
-                    }
-
-                    array[j] = temp;
-
-                }
-
+                list[j + 1] = list[j];
+                arrayPos = j;
             }
-
-            sorted++;
-
-            for(int x = 0; x < sorted; x++)
-            {
-              printf("%i, ",array[x]);
-
-            }
-
-            printf("\n");
-
         }
 
+        list[arrayPos] = comp;
 
+
+        sortedList++;
 
 
     }
 
-    for(int a = 0; a < aSize; a++)
+
+
+
+    for (int x = 0; x < arraySize; x++)
     {
-        printf("%i\n",array[a]);
+        printf("%i\n", list[x]);
     }
-
-
-
-
-
-
-
-
-
-
 
 }
