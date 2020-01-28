@@ -9,8 +9,8 @@ int main(void)
 
     for (int i = 0; i < arraySize; i++)
     {
-        int comp = list[i];
-        int arrayPos = i;
+        int comp = list[i]; // The number to compare sorted array with.
+        int arrayPos = i; // Position of array that we later use to put compared number to.
 
         for (int j = sortedList; j >= 0; j--)
         {
